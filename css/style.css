@@ -397,11 +397,12 @@ body {
         left: 2.5rem; } }
   .navigation__nav {
     height: 100vh;
+    width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1500;
     opacity: 0;
+    z-index: -1;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .navigation__list {
     position: absolute;
@@ -435,7 +436,8 @@ body {
     transform: scale(80); }
   .navigation__checkbox:checked ~ .navigation__nav {
     opacity: 1;
-    width: 100%; }
+    width: 100%;
+    z-index: 99; }
   .navigation__icon {
     position: relative;
     margin-top: 3.5rem; }
