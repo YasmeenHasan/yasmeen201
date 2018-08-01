@@ -30,15 +30,6 @@
                 </svg>
             </button>
         </form>
-        <!-- <form action="#" class="search" autocomplete="off">
-            <input type="text" class="search__input" placeholder="Search..." autocomplete="off" name="search" aria-label="Search Your Items"
-                value="">
-            <button class="search__button" aria-label="Search">
-                <svg class="search__icon">
-                    <use xlink:href="img/iconsprites.svg#icon-search"></use>
-                </svg>
-            </button>
-        </form> -->
         <nav class="nav">
             <ul class="menu">
                 <li class="menu__list">
@@ -65,34 +56,16 @@
                 </li>
             </ul>
         </nav>
-        <div class="cartIcon">
+        <div class="cartIcon" tabindex="0">
             <svg>
                 <use xlink:href="img/iconsprites.svg#icon-cart"></use>
             </svg>
             <span class="cart-notification"></span>
         </div>
     </header>
-
-    <!-- <header class="mobile-header">
-        <label class="mobile-header__button" tabindex="0">
-            <span class="mobile-header__icon">&nbsp;</span>
-        </label>
-
-        <form class="search search-mobile" autocomplete="off">
-            <input type="text" class="search__input" placeholder="Search..." name="search" aria-label="Search"
-                value="">
-            <button class="search__button" aria-label="Search">
-                <svg class="search__icon">
-                    <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
-                </svg>
-            </button>
-        </form>   
-    </header> -->
-
-    <div id="popup-overlay">
+    <div id="popup-overlay" tabindex="-1">
         <img src="img/loader.gif" alt="loader" />
     </div>
-    <!-- <section  class="app-carousel"> -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
@@ -121,7 +94,7 @@
     
                 <div class="item">
                       <img src="./img/FoodImages/soup.jpg" alt="Salad" class="carousel__image">
-                    <fieldset class="carousel-caption">
+                    <fieldset class="carousel-caption" tabindex="0">
                         <legend>% Offer</legend>
                         <p>Free delivery on orders above Rs 99!</p>
                     </fieldset>
@@ -135,24 +108,7 @@
         </div>
     <!-- </section> -->
    
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
-
-        <div class="navigation__background">&nbsp;</div>
-
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="index.html" class="navigation__link">Home</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Breakfast</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Main Course</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
-                </ul>
-        </nav>
-    </div>
+ 
     <div class="checkout_row">
 
         <button class="btn btn__checkout" role="link" tabindex="0">Check Out</button>
@@ -163,9 +119,9 @@
        
         <div class="category_Sidebar" role="navigation">
             <ul class="category_container">
-                <li class="category_firstlevel">
+                <!-- <li class="category_firstlevel">
                     <a href="#">Recommended</a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <!-- Categories Wrapper -->
@@ -205,7 +161,24 @@
         </ul>
 
     </footer>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Breakfast</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Main Course</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+                </ul>
+        </nav>
+    </div>
     <!--This is our template for food Items -->
     <!--Data will be inserted in its according place, replacing the brackets.-->
     <script id="food-template" type="text/x-handlebars-template">
@@ -215,35 +188,36 @@
         {{#each list}}
         <div class="category_detail">
             <figure class="category_detail__top-half">
-                <img src={{imgsrc}} alt="Pasta">
+                <img src={{imgsrc}} alt="Pasta" tabindex="0">
             </figure>
 
-            <h4 class="item-title heading-4 heading-4--dark">{{Name}}</h4>
-            <p class="item-desc">{{Desc}}</p>
-            <p class="item-price">&#x20B9; {{price}}</p>
+            <h4 class="item-title heading-4 heading-4--dark" tabindex="0">{{Name}}</h4>
+            <p class="item-desc" tabindex="0">{{Desc}}</p>
+            <p class="item-price" tabindex="0">&#x20B9; {{price}}</p>
 
 
             <div>
                 <div class="btn_plus_minus" id="btn__update_{{ItemId}}">
-                    <span class="btn_minus qty" data-id="{{ItemId}}" role="button" aria-label="Decrement Quantity">-</span>
+                    <span class="btn_minus qty" tabindex="0" data-id="{{ItemId}}" role="button" aria-label="Decrement Quantity">-</span>
                     {{#if qty}}
                     <span id="qty_{{ItemId}}" class="qty">{{qty}}</span>
                     {{else}}
-                    <span id="qty_{{ItemId}}" class="qty">0</span>
+                    <span id="qty_{{ItemId}}"  class="qty">0</span>
                     {{/if}}
-                    <span class="btn_plus qty" data-id="{{ItemId}}">+</span>
+                    <span class="btn_plus qty" tabindex="0" data-id="{{ItemId}}"  role="button" aria-label="Increment Quantity">+</span>
                 </div>
-                <button class="btn__add-cart" id="btn__add-cart_{{ItemId}}" data-id="{{ItemId}}" role="button" aria-label="Increment Quantity">ADD</button>
+                <button class="btn__add-cart" id="btn__add-cart_{{ItemId}}" data-id="{{ItemId}}" role="button" aria-label="ADD">ADD</button>
             </div>
         </div>
-        {{/each}} {{/each}}
+        {{/each}}
+         {{/each}}
     </script>
 
     <script id="category-template" type="text/x-handlebars-template">
         {{#each items}}
         <li class="category_firstlevel">
 
-            <input type="checkbox" id="cat_{{categoryId}}" tabindex="-1" class="chk_category" data-id={{categoryId}} />
+            <input type="checkbox" id="cat_{{categoryId}}" class="chk_category" data-id={{categoryId}} />
             <label for="cat_{{categoryId}}" class="category__chk-label">
                     <span class="category__chk-button"></span>
                 {{Desc}}</label> 

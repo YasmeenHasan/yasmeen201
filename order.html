@@ -8,9 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Buy food online in few clicks.">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" /> -->
-
-    <!-- <script src="vendors/js/bootstrap.min.js"></script> -->
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,600,700italic' rel="stylesheet" type="text/css">
 
@@ -51,32 +48,31 @@
         </nav>
 
     </header>
-   
-    <!-- <div class="cart__empty">
-        <div>Your cart is empty</div>
-    </div> -->
     <section class="checkout">
+        <div class="order">
+    
+        </div>
         <div class="checkout__payment-address">
-            <div class="checkout__address">
+            <div class="checkout__address" tabindex="0">
                 <h2 class="heading-secondary" tabindex="0">Delivery Address</h2>
                 <p>Lorem</p>
             </div>
-            <div class="checkout__payment-options">
+            <div class="checkout__payment-options" tabindex="0">
                 <h2 class="heading-secondary" tabindex="0">Choose Payment method</h2>
                 <div class="checkout__payment-detail">
                     <input type="radio" id="paytm" class="checkout__radio_payment" name="payment">
                     <label for="paytm" class="checkout__radio-label" tabindex="0">
-                            <img src="img/pay-icons/Paytm-Wallet.jpg" alt="PayTM logo" class="pay-icons">
-                            <span class="checkout__payment-text">Paytm</span>
-                        <span class="checkout__radio-button"></span>                     
+                        <img src="img/pay-icons/Paytm-Wallet.jpg" alt="PayTM logo" class="pay-icons">
+                        <span class="checkout__payment-text">Paytm</span>
+                        <span class="checkout__radio-button"></span>
                     </label>
                 </div>
                 <div class="">
                     <input type="radio" id="MobiKwik" class="checkout__radio_payment" name="payment">
                     <label for="MobiKwik" class="checkout__radio-label" tabindex="0">
-                        <img src="img/pay-icons/MobiKwik-Logo.png" alt="MobiKwik logo" class="pay-icons" >
+                        <img src="img/pay-icons/MobiKwik-Logo.png" alt="MobiKwik logo" class="pay-icons">
                         <span class="checkout__payment-text">MobiKwik</span>
-                        <span class="checkout__radio-button"></span> 
+                        <span class="checkout__radio-button"></span>
                     </label>
                 </div>
                 <div class="">
@@ -96,24 +92,22 @@
                     </label>
                 </div>
                 <div class="">
-                        <input type="radio" id="cash" class="checkout__radio_payment" name="payment">
-                        <label for="cash" class="checkout__radio-label" tabindex="0">
-                           
-                            <img src="img/pay-icons/cash-on-delivery.jpg" alt="Cash on delivery logo" class="pay-icons">
-                            <span class="checkout__payment-text"> Cash on Delivery</span>
-                            <span class="checkout__radio-button"></span>
-                        </label>
+                    <input type="radio" id="cash" class="checkout__radio_payment" name="payment">
+                    <label for="cash" class="checkout__radio-label" tabindex="0">
+    
+                        <img src="img/pay-icons/cash-on-delivery.jpg" alt="Cash on delivery logo" class="pay-icons">
+                        <span class="checkout__payment-text"> Cash on Delivery</span>
+                        <span class="checkout__radio-button"></span>
+                    </label>
                 </div>
                 <div class="cart center">
-                    <button class="btn btn-orange" role="link"  onclick="window.location.href='#'">Place Order</button>
+                    <button class="btn btn-orange" role="link" onclick="window.location.href='#'">Place Order</button>
                     <button class="btn btn-orange" role="link" onclick="window.location.href='cart.html'">Back to Cart</button>
-                </div>        
+                </div>
             </div>
-           
+    
         </div>
-        <div class="order">
-            
-        </div>
+    
     </section>
   
 
@@ -139,27 +133,9 @@
 
         </ul>
     </footer>
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
-
-        <div class="navigation__background">&nbsp;</div>
-
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="index.html" class="navigation__link">Home</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Breakfast</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Main Course</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
-                </ul>
-        </nav>
-    </div>
     <script id="order-template" type="text/x-handlebars-template">
         <div id="a" class="order__total">
-            <h4  tabindex="0">CART</h4>
+            <h2  tabindex="0">CART</h2>
             <div  tabindex="0" class="order_count">{{count}} Items</div>
         </div>
 
@@ -177,17 +153,27 @@
         <div class="order__total">
             <div  tabindex="0">Subtotal
             </div>
-            <div class="order__total-price">&#x20b9;{{subTotal}}</div>
+            <div class="order__total-price" tabindex="0">&#x20b9;{{subTotal}}</div>
         </div>
         <div class="order__total">
-            <div  >GST
+            <div tabindex="0" >GST (4%) on Food
             </div>
-            <div>&#x20b9;{{gst}}</div>
+            <div tabindex="0">&#x20b9;{{gstOnOthers}}</div>
         </div>
         <div class="order__total">
-            <div>TO PAY
+                <div tabindex="0" >GST (12%) on Beverages
+                </div>
+                <div tabindex="0">&#x20b9;{{gstOnBeverages}}</div>
             </div>
-            <div>&#x20b9;{{totalAmount}}</div>
+        <div class="order__total">
+                <div tabindex="0">Delivery Charges
+                </div>
+                <div tabindex="0">&#x20b9;{{deliveryCharges}}</div>
+        </div>
+        <div class="order__total">
+            <div tabindex="0">TO PAY
+            </div>
+            <div tabindex="0">&#x20b9;{{totalAmount}}</div>
         </div>
     </script>
 <script type="text/javascript" src="js/bundle.js"></script></body>

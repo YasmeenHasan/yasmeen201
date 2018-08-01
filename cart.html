@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Buy food online in few clicks.">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" /> -->
-
-    <!-- <script src="vendors/js/bootstrap.min.js"></script> -->
+  
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,600,700italic' rel="stylesheet" type="text/css">
 
@@ -90,28 +88,11 @@
 
         </ul>
     </footer>
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
-
-        <div class="navigation__background">&nbsp;</div>
-
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="index.html" class="navigation__link">Home</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Breakfast</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Main Course</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
-                </ul>
-        </nav>
-    </div>
     <script id="cart-template" type="text/x-handlebars-template">
                         <div id="a" class="order__total">
-                            <h4 tabindex="0">Order Summary</h4>
-                            <div class="order_count" tabindex="0">{{count}} Items</div>
+                            <h2 tabindex="0">Order Summary</h2>
+                            <div class="order_count" tabindex="0">{{count}} Item's</div>
                         </div>
                 
                         {{#each cart}}
@@ -131,9 +112,19 @@
                             <div class="order__total-price" tabindex="0">&#x20b9;{{subTotal}}</div>
                         </div>
                         <div class="order__total">
-                            <div tabindex="0">GST
+                                <div tabindex="0" >GST (4%) on Food
+                                </div>
+                                <div tabindex="0">&#x20b9;{{gstOnOthers}}</div>
                             </div>
-                            <div tabindex="0">&#x20b9;{{gst}}</div>
+                            <div class="order__total">
+                                    <div tabindex="0" >GST (12%) on Beverages
+                                    </div>
+                                    <div tabindex="0">&#x20b9;{{gstOnBeverages}}</div>
+                                </div>
+                        <div class="order__total">
+                            <div tabindex="0">Delivery Charges
+                            </div>
+                            <div tabindex="0">&#x20b9;{{deliveryCharges}}</div>
                         </div>
                         <div class="order__total">
                             <div tabindex="0">TO PAY
