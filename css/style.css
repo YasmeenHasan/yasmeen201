@@ -362,6 +362,7 @@ body {
   display: none; }
 
 .navigation__button {
+  opacity: 0;
   background-color: #ccc;
   height: 7rem;
   width: 7rem;
@@ -375,6 +376,7 @@ body {
   cursor: pointer; }
   @media only screen and (max-width: 56.25em) {
     .navigation__button {
+      opacity: 1;
       top: 2rem;
       left: 4rem; } }
   @media only screen and (max-width: 37.5em) {
